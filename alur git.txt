@@ -1,0 +1,4 @@
+1. git pull origin main       ← untuk sync dulu
+2. git add .                  ← stage file
+3. git commit -m "pesan"      ← commit perubahan
+4. git push origin main       ← kirim ke GitHub
