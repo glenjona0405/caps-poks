@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <Title>
+            Poks
+        </Title>
+        <link rel="icon" href="image/poker-cards.png">
+    </head>
+    <body>
+        <div class="background"></div>
+        <div class="overlay"></div>
+        <div class="content">
+
+            <div class="sub-content">
+                <img src="image/spades.png" class="icon top-left">
+                <img src="image/hearts.png" class="icon top-right">
+                <img src="image/clubs.png" class="icon bottom-left">
+                <img src="image/diamond.png" class="icon bottom-right">
+                <form style="width: 80%; padding-top: 50px; display: flex; flex-direction: column;">
+                    <div class="form-element">
+                        <select class="select-player">
+                        </select>
+                    </div>                    
+                    <div class="form-element">
+                        <select class="select-player">
+                            <option value="" disabled selected>Choose the player..</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="form-element" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+                        <label>Win<input type="radio" name="result"></label>
+                        <label>Lose<input type="radio" name="result"></label>
+                    </div>
+                    <div class="form-element">
+                        <input placeholder="Final call..." type="number" id="rcard" name="rcard" class="textbox-finalcall-remainingcards">
+                    </div>
+                    <input class="button-submit" type="submit" value="Submit" style="margin-top: 30px; margin-bottom: 10px; max-width: 100%;">
+                    <input class="button-submit" type="submit" value="Submit and go on to the next game" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%;">
+                    <div>
+                        <div style="font-weight: bolder; display: flex; justify-content: center; align-items: center;">Current Game Result>></div>
+                        <div style="font-weight: bolder; display: flex; justify-content: center; align-items: center;">Today's Result>></div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>

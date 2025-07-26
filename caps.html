@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<html>
+    <head>
+        <script src="./populate-select.js" defer></script>
+        <script src="./crud.js" defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <Title>
+            Caps
+        </Title>
+        <link rel="icon" href="image/poker-cards.png">
+    </head>
+    <body>
+        <div class="background"></div>
+        <div class="overlay"></div>
+        <div class="content">
+
+            <div class="sub-content">
+                <img src="image/spades.png" class="icon top-left">
+                <img src="image/hearts.png" class="icon top-right">
+                <img src="image/clubs.png" class="icon bottom-left">
+                <img src="image/diamond.png" class="icon bottom-right">
+                <form id="formInput" style="width: 80%; padding-top: 50px; display: flex; flex-direction: column;">
+                    <div class="form-element-no-of-games">
+                        <!--<select id="trxSelect" class="select-player">
+                            <option value="" disabled selected>Choose the Game..</option>
+                        </select>-->
+                        <input placeholder="No of Games.." type="number" id="nogame" name="nogame" class="textbox-no-of-games">
+                    </div>                    
+                    <div class="form-element">
+                        <select  id="playerSelect" class="select-player">
+                            <option value="" disabled selected>Choose the player..</option>
+                        </select>
+                    </div>
+                    <div class="form-element" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+                        <label>Win<input type="radio" id="rbuttonwin" name="result" value="1" onclick="notVisible()"></label>
+                        <label>Lose<input type="radio" id="rbuttonlose" name="result" value="0" onclick="notVisible()"></label>
+                    </div>
+                    <div class="form-element">
+                        <input placeholder="Remaining cards..." type="number" id="rcard" name="rcard" class="textbox-finalcall-remainingcards">
+                    </div>
+                    <input onclick="simpan()" class="button-submit" id="buttonSubmit" type="button" value="Submit" style="margin-top: 30px; margin-bottom: 10px; max-width: 100%;">
+                    <input onclick="simpanData()" class="button-submit" type="submit" value="Submit and start the new game" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%;">
+                    <div>
+                        <div style="font-weight: bolder; display: flex; justify-content: center; align-items: center;">Current Game Result>></div>
+                        <div style="font-weight: bolder; display: flex; justify-content: center; align-items: center;">Today's Result>></div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            function getMySQLDatetime() {
+            const d = new Date();
+            const pad = (n) => n.toString().padStart(2, '0');
+            return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+            };
+
+            const notVisible = () => {
+            const result = parseInt(document.querySelector('input[name="result"]:checked')?.value);
+            document.getElementById("rcard").style.visibility = result === 1 ? "hidden" : "visible";
+            //document.getElementById("rcard").style.visibility = akan menerima hasil ternary op (result === 1 ? ....) krn cuma bisa nerima string visible atau hidden
+            console.log(parseInt(document.querySelector('input[name="result"]:checked')?.value));
+            };
+
+            
+
+            //dengan getelementbyid, ga perlu set function lg untuk tombol submitnya
+            document.getElementById('buttonSubmit').addEventListener("click", function(e) {
+                e.preventDefault();
+                const isValid = 
+                    parseInt(document.getElementById("nogame").value) &&
+                    parseInt(document.querySelector('input[name="result"]:checked').value) < 2 &&
+                    parseInt(document.getElementById("playerSelect").value);
+                if (!isValid) {
+                    alert("Mohon lengkapi data")
+                } 
+                else {
+                    const nGame = document.getElementById("nogame").value;
+                    const data = {
+                    datetime: getMySQLDatetime(),
+                    game: parseInt(document.getElementById("nogame").value),
+                    is_winner: parseInt(document.querySelector('input[name="result"]:checked').value),
+                    profit_loss: parseInt(document.querySelector('input[name="result"]:checked').value) ? parseInt(document.getElementById("rcard").value) : parseInt("-" + document.getElementById("rcard").value),
+                    player_id: parseInt(document.getElementById("playerSelect").value)
+                    } ;
+                    simpanData(data);
+                    document.getElementById('formInput').reset();
+                    document.getElementById("nogame").value = nGame;
+                }
+            });
+        </script>
+    </body>
+</html>
