@@ -3,7 +3,8 @@ const app = express();
 const cors = require('cors');
 const playersRoutes = require('./backend/players/routes/playerRoute');
 const trxRoutes = require('./backend/trx/routes/trxRoute')
-const PORT = 5000;
+//const PORT = 5000;
+const PORT = 57320;
 
 // Middleware
 app.use(cors());// agar bisa konek ke API database (misal kalau portnya beda)
@@ -15,7 +16,7 @@ app.use('/trx', trxRoutes);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
+  console.log(`Server berjalan di port ${PORT}`);
 });
 
 

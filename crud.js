@@ -3,7 +3,7 @@ async function simpanData(data/*game, waktu, isWinner, profitLoss*/) {
       
       try {
         console.log("Data yang dikirim:", data);
-        const response = await fetch("http://localhost:5000/trx", {
+        const response = await fetch("crossover.proxy.rlwy.net/trx", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
