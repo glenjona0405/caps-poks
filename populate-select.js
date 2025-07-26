@@ -1,6 +1,6 @@
 async function loadPlayers() {
 try {
-    const res = await fetch('http://localhost:5000/players');
+    const res = await fetch('crossover.proxy.rlwy.net/players');
     const data = await res.json();
     const select = document.getElementById('playerSelect');
 
@@ -19,7 +19,7 @@ loadPlayers();
 
 async function loadTrxGames() {
 try {
-    const res = await fetch('http://localhost:5000/trx/allTrxGames');
+    const res = await fetch('crossover.proxy.rlwy.net/trx/allTrxGames');
     const data = await res.json();
     const select = document.getElementById('trxSelect');
 
