@@ -10,9 +10,9 @@ const mysql = require('mysql2');
 })
 */
 const db = mysql.createConnection({
-    host: "crossover.proxy.rlwy.net",
+    host: "caps-poks-production.up.railway.app",
     user: 'root',
-    port : 57320,
+    port : 5000,
     password: 'belyGiZLjootPKRbkiPOCIatVqSZngcr',
     database: 'railway'
 })
