@@ -8,7 +8,7 @@ const mysql = require('mysql2');
     password: 'Bud1moncor.',
     database: 'caps_poks'
 })
-*/
+
 const db = mysql.createConnection({
     host: "caps-poks-production.up.railway.app",
     user: 'root',
@@ -16,6 +16,15 @@ const db = mysql.createConnection({
     password: 'belyGiZLjootPKRbkiPOCIatVqSZngcr',
     database: 'railway'
 })
+*/
+
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,        // dari Railway
+  user: process.env.DB_USER,        // dari Railway
+  port: process.env.DB_PORT,        // dari Railway
+  password: process.env.DB_PASSWORD,// dari Railway
+  database: process.env.DB_NAME     // dari Railway
+});
 
 //3. konek ke db
 db.connect((err) => {
