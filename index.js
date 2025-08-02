@@ -15,7 +15,7 @@ app.use('/players', playersRoutes);
 app.use('/trx', trxRoutes);
 
 // Start server
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server berjalan di port ${PORT}`);
 });
 
