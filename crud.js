@@ -3,7 +3,7 @@ async function simpanData(data/*game, waktu, isWinner, profitLoss*/) {
       
       try {
         console.log("Data yang dikirim:", data);
-        const response = await fetch("https://caps-poks-production.up.railway.app/trx", {
+        const response = await fetch(/*"https://caps-poks-production.up.railway.app/trx"*/ "https://localhost:5000", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

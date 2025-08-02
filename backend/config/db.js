@@ -2,13 +2,13 @@
 const mysql = require('mysql2');
 
 //2. Setting connection mysqlnya
-/*const db = mysql.createConnection({
+const db = mysql.createConnection({
     host: "localhost",
     user: 'root',
     password: 'Bud1moncor.',
     database: 'caps_poks'
 })
-*/
+/*
 const db = mysql.createConnection({
     host: "caps-poks-production.up.railway.app",
     user: 'root',
@@ -16,7 +16,7 @@ const db = mysql.createConnection({
     password: 'belyGiZLjootPKRbkiPOCIatVqSZngcr',
     database: 'railway'
 })
-
+*/
 /*
 const db = mysql.createConnection({
   host: process.env.DB_HOST,        // dari Railway
