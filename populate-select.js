@@ -1,6 +1,7 @@
 async function loadPlayers() {
 try {
-    const res = await fetch(/*'https://caps-poks-production.up.railway.app/players'*/"http://localhost:5000/players");
+    const res = await fetch('https://crossover.proxy.rlwy.net:28425/players');
+    /*const res = await fetch('https://caps-poks-production.up.railway.app/players'"http://localhost:5000/players");*/
     const data = await res.json();
     const select = document.getElementById('playerSelect');
 
@@ -19,7 +20,8 @@ loadPlayers();
 
 async function loadTrxGames() {
 try {
-    const res = await fetch(/*'https://caps-poks-production.up.railway.app/trx/allTrxGames'*/"http://localhost:5000/trx/allTrxGames");
+    const res = await fetch('https://crossover.proxy.rlwy.net:28425/trx/allTrxGames');
+    /*const res = await fetch('https://caps-poks-production.up.railway.app/trx/allTrxGames'"http://localhost:5000/trx/allTrxGames");*/
     const data = await res.json();
     const select = document.getElementById('trxSelect');
 
