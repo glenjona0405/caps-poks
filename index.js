@@ -4,7 +4,7 @@ const cors = require('cors');
 const playersRoutes = require('./backend/players/routes/playerRoute');
 const trxRoutes = require('./backend/trx/routes/trxRoute')
 //const PORT = 5000;
-const PORT = 5000;
+const PORT = 28425;
 
 // Middleware
 app.use(cors(/*{origin: ['https://glenjona0405.github.io', 'http://127.0.0.1:5500']}*/));// agar bisa konek ke API database (misal kalau portnya beda)
