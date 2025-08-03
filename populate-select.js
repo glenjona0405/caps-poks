@@ -1,7 +1,7 @@
 async function loadPlayers() {
 try {
-    const res = await fetch(/*'https://caps-poks-production.up.railway.app/players'*/'https://localhost:5000/players');
-    const data = (await res.json()).data;
+    const res = await fetch(/*'https://caps-poks-production.up.railway.app/players'*/"http://localhost:5000/players");
+    const data = await res.json();
     const select = document.getElementById('playerSelect');
 
     data.forEach(player => {
@@ -19,8 +19,8 @@ loadPlayers();
 
 async function loadTrxGames() {
 try {
-    const res = await fetch(/*'https://caps-poks-production.up.railway.app/trx/allTrxGames'*/'https://localhost:5000/trx/allTrxGames');
-    const data = (await res.json()).data;
+    const res = await fetch(/*'https://caps-poks-production.up.railway.app/trx/allTrxGames'*/"http://localhost:5000/trx/allTrxGames");
+    const data = await res.json();
     const select = document.getElementById('trxSelect');
 
     data.forEach(game => {
