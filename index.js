@@ -11,6 +11,9 @@ app.use(cors({origin: ['https://glenjona0405.github.io', 'http://127.0.0.1:5500'
 app.use(express.json()); // agar bisa parsing JSON dari request body
 
 // Route
+app.get("/", (req, res) => {
+  res.send("🚀 Server aktif");
+});
 app.use('/players', playersRoutes);
 app.use('/trx', trxRoutes);
 
