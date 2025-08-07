@@ -14,8 +14,8 @@ app.use(express.json()); // agar bisa parsing JSON dari request body
 app.get("/", (req, res) => {
   res.send("🚀 Server aktif");
 });
-app.use('/players', playersRoutes);
-app.use('/trx', trxRoutes);
+/*app.use('/players', playersRoutes);
+app.use('/trx', trxRoutes);*/
 
 // Start server
 app.listen(PORT, () => {
