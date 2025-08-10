@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 app.use('/trx', trxRoutes);*/
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server berjalan di port ${PORT}`);
 });
 
