@@ -4,7 +4,7 @@ const cors = require('cors');
 const playersRoutes = require('./backend/players/routes/playerRoute');
 const trxRoutes = require('./backend/trx/routes/trxRoute')
 //const PORT = 5000;
-const PORT = process.env.MYSQLPORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({origin: "*"}));// agar bisa konek ke API database (misal kalau portnya beda)
