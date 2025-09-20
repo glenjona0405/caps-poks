@@ -20,7 +20,7 @@ const db = mysql.createConnection({
 })
 */
 
-const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLNAME}`;
+const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`;
 
 const db = mysql.createConnection(urlDB);
 
@@ -34,7 +34,7 @@ db.connect((err) => {
         console.log(process.env.MYSQLUSER);
         console.log(process.env.MYSQLPORT);
         console.log(process.env.MYSQLPASSWORD);
-        console.log(process.env.MYSQLNAME);
+        console.log(process.env.MYSQLDATABASE);
 });
 
 module.exports = db;
