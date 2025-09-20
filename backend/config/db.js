@@ -17,6 +17,7 @@ db.connect((err) => {
         console.log('Sudah terkonek ke db railway');
         console.log(process.env.MYSQLHOST);
         console.log(process.env.MYSQLUSER);
+        console.log(process.env.PORT);
         console.log(process.env.MYSQLPORT);
         console.log(process.env.MYSQLPASSWORD);
         console.log(process.env.MYSQLDATABASE);
