@@ -20,15 +20,9 @@ const db = mysql.createConnection({
 })
 */
 
-const urlDB = "mysql://root:qAMLLuJrboCwuzBifpvzZauwEVyEaEKJ@crossover.proxy.rlwy.net:28425/railway"
+const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLNAME}`;
 
-const db = mysql.createConnection({
-  host: process.env.MYSQLHOST,        // dari Railway
-  user: process.env.MYSQLUSER,        // dari Railway
-  port: process.env.MYSQLPORT,        // dari Railway
-  password: process.env.MYSQLPASSWORD,// dari Railway
-  database: process.env.MYSQLNAME     // dari Railway
-});
+const db = mysql.createConnection(urlDB);
 
 //3. konek ke db
 db.connect((err) => {
